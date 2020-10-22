@@ -1,0 +1,16 @@
+query retrieveRepositories($first:Int!,  $before:String, $after:String) {
+    viewer {
+        repositories(first: $first, before: $before, after: $after){
+            pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
+                hasPreviousPage
+            }
+            nodes{
+                name,
+                id
+            }
+        }
+    }
+}
